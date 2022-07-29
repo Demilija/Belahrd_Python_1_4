@@ -23,8 +23,16 @@ def month_to_season(month: int) -> str:
     :return: название сезона, например "зима"
     :rtype: str
     """
-    season = None
-    return season
+
+    season = {'Зима': [1, 2, 12],
+              'Весна': [3, 4, 5],
+              'Лето': [6, 7, 8],
+              'Осень': [9, 10, 11]
+              }
+    for k, v in season.items():
+        if month in v:
+            return k
+    return
 
 
 if __name__ == '__main__':
